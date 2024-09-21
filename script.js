@@ -19,13 +19,15 @@ const courseData = {
         "Introducing Sociology or Introduction to Social Work or Introduction to Political Theory : Fiction and Non- Fiction",
         "History of the Emergence of Independent Bangladesh",
       ],
-      "English Reading Skills": "4",
-      "English Writing Skills": "4",
-      "Introduction to Poetry": "4",
-      "Introduction to Prose: Fiction and Non- Fiction": "4",
-      "Introducing Sociology or Introduction to Social Work or Introduction to Political Theory : Fiction and Non- Fiction":
-        "4",
-      "History of the Emergence of Independent Bangladesh": "4",
+      credit: {
+        "English Reading Skills": "4",
+        "English Writing Skills": "4",
+        "Introduction to Poetry": "4",
+        "Introduction to Prose: Fiction and Non- Fiction": "4",
+        "Introducing Sociology or Introduction to Social Work or Introduction to Political Theory : Fiction and Non- Fiction":
+          "4",
+        "History of the Emergence of Independent Bangladesh": "4",
+      },
     },
     {
       year: "Second Year",
@@ -47,12 +49,14 @@ const courseData = {
         "Political Organisation and The Political System of UK and USA",
         "Viva-Voce",
       ],
-      "Introduction to Drama": "4",
-      "Romantic Poetry": "4",
-      "Advanced Reading and Writing": "4",
-      "Sociology of Bangladesh  Or  Bangladesh Society and Culture": "4",
-      "Political Organisation and The Political System of UK and USA": "4",
-      "Viva-Voce": "2",
+      credit: {
+        "Introduction to Drama": "4",
+        "Romantic Poetry": "4",
+        "Advanced Reading and Writing": "4",
+        "Sociology of Bangladesh  Or  Bangladesh Society and Culture": "4",
+        "Political Organisation and The Political System of UK and USA": "4",
+        "Viva-Voce": "2",
+      },
     },
     {
       year: "Third Year",
@@ -77,14 +81,16 @@ const courseData = {
         "Introduction to Literary Criticism (Up to Romantic Period)",
         "Introduction to Linguistics",
       ],
-      "Elizabethan and Jacobean Drama": "4",
-      "16th & 17th Century Poetry": "4",
-      "17th and 18th Century Non-Fictional Prose": "4",
-      "Restoration and Eighteenth Century Fiction": "4",
-      "Restoration and Eighteenth Century Poetry and Drama": "4",
-      "Victorian Poetry": "4",
-      "Introduction to Literary Criticism (Up to Romantic Period)": "4",
-      "Introduction to Linguistics": "4",
+      credit: {
+        "Elizabethan and Jacobean Drama": "4",
+        "16th & 17th Century Poetry": "4",
+        "17th and 18th Century Non-Fictional Prose": "4",
+        "Restoration and Eighteenth Century Fiction": "4",
+        "Restoration and Eighteenth Century Poetry and Drama": "4",
+        "Victorian Poetry": "4",
+        "Introduction to Literary Criticism (Up to Romantic Period)": "4",
+        "Introduction to Linguistics": "4",
+      },
     },
     {
       year: "Fourth Year",
@@ -113,17 +119,19 @@ const courseData = {
         "Continental Literature Or Approaches and Methods of Language Teaching",
         "Viva-voce",
       ],
-      "Nineteenth Century Novel": "4",
-      "Twentieth Century Poetry": "4",
-      "Modern Drama": "4",
-      "Twentieth Century Novel": "4",
-      "American Poetry": "4",
-      "American Literature: Fiction and Drama": "4",
-      "Classics in Translation": "4",
-      "Literary Criticism (From Victorian to Modern Age)": "4",
-      "Continental Literature Or Approaches and Methods of Language Teaching":
-        "4",
-      "Viva-voce": "4",
+      credit: {
+        "Nineteenth Century Novel": "4",
+        "Twentieth Century Poetry": "4",
+        "Modern Drama": "4",
+        "Twentieth Century Novel": "4",
+        "American Poetry": "4",
+        "American Literature: Fiction and Drama": "4",
+        "Classics in Translation": "4",
+        "Literary Criticism (From Victorian to Modern Age)": "4",
+        "Continental Literature Or Approaches and Methods of Language Teaching":
+          "4",
+        "Viva-voce": "4",
+      },
     },
   ],
   Bangla: [
@@ -147,14 +155,16 @@ const courseData = {
         "Introducing Sociology or Introduction to Social Work or Introduction to Political Theory : Fiction and Non- Fiction",
         "History of the Emergence of Independent Bangladesh",
       ],
-      "History and Culture of Bangladesh and Bengalees (From Ancients to 2000 AD)":
-        "4",
-      "History of Bangla Language and Functional Bangla": "4",
-      "Bangla Poetry-1": "4",
-      "Bangla Novel-1": "4",
-      "Introducing Sociology or Introduction to Social Work or Introduction to Political Theory : Fiction and Non- Fiction":
-        "4",
-      "History of the Emergence of Independent Bangladesh": "4",
+      credit: {
+        "History and Culture of Bangladesh and Bengalees (From Ancients to 2000 AD)":
+          "4",
+        "History of Bangla Language and Functional Bangla": "4",
+        "Bangla Poetry-1": "4",
+        "Bangla Novel-1": "4",
+        "Introducing Sociology or Introduction to Social Work or Introduction to Political Theory : Fiction and Non- Fiction":
+          "4",
+        "History of the Emergence of Independent Bangladesh": "4",
+      },
     },
     {
       year: "Second Year",
@@ -177,13 +187,15 @@ const courseData = {
         "History of the Emergence of Independent Bangladesh",
         "English (Compulsory)",
       ],
-      "History of Bengali Literature -1 (Ancients and Medieval)": "4",
-      "Poetry of Medieval Age": "4",
-      "Bengali Poetry -2": "4",
-      "Bengali Drama -1": "4",
-      "Sociology of Bangladesh  Or  Bangladesh Society and Culture": "4",
-      "History of the Emergence of Independent Bangladesh": "4",
-      "English (Compulsory)": "Non-credit",
+      credit: {
+        "History of Bengali Literature -1 (Ancients and Medieval)": "4",
+        "Poetry of Medieval Age": "4",
+        "Bengali Poetry -2": "4",
+        "Bengali Drama -1": "4",
+        "Sociology of Bangladesh  Or  Bangladesh Society and Culture": "4",
+        "History of the Emergence of Independent Bangladesh": "4",
+        "English (Compulsory)": "Non-credit",
+      },
     },
     {
       year: "Third Year",
@@ -209,16 +221,18 @@ const courseData = {
         "Bangla Comedy and Literature of Traveling",
         "Bangla Novel-2",
       ],
-      "History of Bangla Literature-II, First part of Modern Age (1801-1947)":
-        "4",
-      "Poetry of Ancient and Medieval Age": "4",
-      "Bangla Short Story-I": "4",
-      "Theory of Folklor and Bangla Folk Literature": "4",
-      "Literary forms, Literary principles (Theory Rasa), Ornamentation, Rhythm":
-        "4",
-      "Bangla Prose-I": "4",
-      "Bangla Comedy and Literature of Traveling": "4",
-      "Bangla Novel-2": "4",
+      credit: {
+        "History of Bangla Literature-II, First part of Modern Age (1801-1947)":
+          "4",
+        "Poetry of Ancient and Medieval Age": "4",
+        "Bangla Short Story-I": "4",
+        "Theory of Folklor and Bangla Folk Literature": "4",
+        "Literary forms, Literary principles (Theory Rasa), Ornamentation, Rhythm":
+          "4",
+        "Bangla Prose-I": "4",
+        "Bangla Comedy and Literature of Traveling": "4",
+        "Bangla Novel-2": "4",
+      },
     },
     {
       year: "Fourth Year",
@@ -247,17 +261,19 @@ const courseData = {
         "Literature on Bangladesh Liberation War",
         "Viva-voce",
       ],
-      "History of Bangla Literature-3 (Development of Bangladeshi Literature Since 1947 to 2000)":
-        "4",
-      "Bangla Novel-3": "4",
-      "Western Literary Theores and Methods of Literary Criticism": "4",
-      "Bangla Drama-2": "4",
-      "Classical Literature (Translated)": "4",
-      "Bangla Short-Stories-2": "4",
-      "Bangla Poetry-3": "4",
-      "Phonetics and  Linguistics": "4",
-      "Literature on Bangladesh Liberation War": "4",
-      "Viva-voce": "4",
+      credit: {
+        "History of Bangla Literature-3 (Development of Bangladeshi Literature Since 1947 to 2000)":
+          "4",
+        "Bangla Novel-3": "4",
+        "Western Literary Theores and Methods of Literary Criticism": "4",
+        "Bangla Drama-2": "4",
+        "Classical Literature (Translated)": "4",
+        "Bangla Short-Stories-2": "4",
+        "Bangla Poetry-3": "4",
+        "Phonetics and  Linguistics": "4",
+        "Literature on Bangladesh Liberation War": "4",
+        "Viva-voce": "4",
+      },
     },
   ],
   Accounting: [
@@ -279,12 +295,14 @@ const courseData = {
         "Micro Economics",
         "History of the Emergence of Independent Bangladesh",
       ],
-      "Principles of Accounting": "4",
-      "Principles of Finance": "4",
-      "Principles of Marketing": "4",
-      "Principles of Management": "4",
-      "Micro Economics": "4",
-      "History of the Emergence of Independent Bangladesh": "4",
+      credit: {
+        "Principles of Accounting": "4",
+        "Principles of Finance": "4",
+        "Principles of Marketing": "4",
+        "Principles of Management": "4",
+        "Micro Economics": "4",
+        "History of the Emergence of Independent Bangladesh": "4",
+      },
     },
     {
       year: "Second Year",
@@ -306,13 +324,15 @@ const courseData = {
         "Macro Economics",
         "Business Communication and Report Writing (In English)",
       ],
-      "Comuter and Information Technology (Accountinpg)": "4",
-      "Taxation in Bangladesh": "4",
-      "Intermediate Accounting": "4",
-      "Business Mathematics": "4",
-      "Business Statistics (In English)": "4",
-      "Macro Economics": "4",
-      "Business Communication and Report Writing (In English)": "4",
+      credit: {
+        "Comuter and Information Technology (Accountinpg)": "4",
+        "Taxation in Bangladesh": "4",
+        "Intermediate Accounting": "4",
+        "Business Mathematics": "4",
+        "Business Statistics (In English)": "4",
+        "Macro Economics": "4",
+        "Business Communication and Report Writing (In English)": "4",
+      },
     },
     {
       year: "Third Year",
@@ -336,14 +356,16 @@ const courseData = {
         "Financial Management",
         "Banking and Insurance Theories, Laws and Accounts",
       ],
-      "Audit and Assurance": "4",
-      "Advanced Accounting-I": "4",
-      "Cost Accounting": "4",
-      "Management Accounting (In English)": "4",
-      "Business and Commercial Laws": "4",
-      Entrepreneurship: "4",
-      "Financial Management": "4",
-      "Banking and Insurance Theories, Laws and Accounts": "4",
+      credit: {
+        "Audit and Assurance": "4",
+        "Advanced Accounting-I": "4",
+        "Cost Accounting": "4",
+        "Management Accounting (In English)": "4",
+        "Business and Commercial Laws": "4",
+        Entrepreneurship: "4",
+        "Financial Management": "4",
+        "Banking and Insurance Theories, Laws and Accounts": "4",
+      },
     },
     {
       year: "Fourth Year",
@@ -372,33 +394,22 @@ const courseData = {
         "Research Methodology (In English)",
         "Viva-voce",
       ],
-      "Accounting Theory": "4",
-      "Advanced Auditing & Professional Ethics": "4",
-      "Accounting Information Systems": "4",
-      "Organizational Behavior": "4",
-      "Corporate Law and Practices": "4",
-      "Working Capital Management And Financial Statement Analysis": "4",
-      "Advanced Accounting-II": "4",
-      "Investment Analysis and Portfolio Management": "4",
-      "Research Methodology (In English)": "4",
-      "Viva-voce": "4",
+      credit: {
+        "Accounting Theory": "4",
+        "Advanced Auditing & Professional Ethics": "4",
+        "Accounting Information Systems": "4",
+        "Organizational Behavior": "4",
+        "Corporate Law and Practices": "4",
+        "Working Capital Management And Financial Statement Analysis": "4",
+        "Advanced Accounting-II": "4",
+        "Investment Analysis and Portfolio Management": "4",
+        "Research Methodology (In English)": "4",
+        "Viva-voce": "4",
+      },
     },
   ],
 };
 
-const grades = [
-  "Select",
-  "A+ 4.00",
-  "A 3.75",
-  "A- 3.50",
-  "B+ 3.25",
-  "B 3.00",
-  "B- 2.75",
-  "C+ 2.50",
-  "C 2.25",
-  "D 2.00",
-  "F 0.00",
-];
 const homePage = document.querySelector(".main_inner_home");
 const resultPage = document.querySelector(".main_inner_result_page");
 const cgpaResultPage = document.querySelector(".main_inner_cgpa_result_page");
@@ -431,6 +442,112 @@ subjectYearInputForm.addEventListener("submit", function (event) {
   resultPage.style.display = "block";
 });
 
+/*           */
+/* Home page */
+/*           */
+
+/*             */
+/* result page */
+/*             */
+const grades = [
+  "Select",
+  "A+ 4.00",
+  "A 3.75",
+  "A- 3.50",
+  "B+ 3.25",
+  "B 3.00",
+  "B- 2.75",
+  "C+ 2.50",
+  "C 2.25",
+  "D 2.00",
+  "F 0.00",
+];
+
+// const selectGradeEl = document.getElementById("result_grade_select");
+
+function filterData({ name, year }) {
+  // it calculates the total credit
+  let totalCreditArr;
+  const filteredYear = courseData[name].filter((data) => data.year === year);
+  totalCreditArr = Object.values(filteredYear[0].credit);
+  let totalCredit = totalCreditArr.reduce(
+    (accumulator, current) => parseFloat(accumulator) + parseFloat(current)
+  );
+
+  // it displays the total credit
+  document.querySelector(".total_credit").textContent = totalCredit;
+
+  displayInputFields(filteredYear);
+}
+
+function displayInputFields(filterData) {
+  filterData[0].subjects.map((courseName, index) => {
+    createGradeInputBox(courseName, index, filterData[0].credit[courseName]);
+  });
+}
+
+function createGradeInputBox(courseName, index, credit) {
+  // it creates the whole resultPageFormInner
+  const resultPageForm = document.querySelector(".result_page_form");
+
+  const resultPageFormInner = createElement(
+    "div",
+    "result_page_form_inner",
+    null
+  );
+
+  const subjectName = createElement(
+    "p",
+    "subject_name",
+    `${index + 1} ${courseName}`
+  );
+
+  const resultInputContainer = createElement(
+    "div",
+    "result_input_container",
+    null
+  );
+
+  const resultFormField1 = createElement("div", "result_form_field", null);
+
+  const resultCreditLabel = createElement(
+    "span",
+    "result_credit_label",
+    "Credit:"
+  );
+  const resultCredit = createElement("span", "result_credit", credit);
+
+  const resultFormField2 = createElement("div", "result_form_field", null);
+
+  const resultGradeLabel = createElement(
+    "span",
+    "result_grade_label",
+    "Grade:"
+  );
+
+  const resultGradeSelect = createElement("select", "result_grade_select");
+
+  grades.map((grade) => {
+    const optionEl = createElement("option", null, grade, grade);
+    resultGradeSelect.append(optionEl);
+  });
+
+  resultFormField1.append(resultCreditLabel, resultCredit);
+  resultFormField2.append(resultGradeLabel, resultGradeSelect);
+  resultInputContainer.append(resultFormField1, resultFormField2);
+  resultPageFormInner.append(subjectName, resultInputContainer);
+  resultPageForm.append(resultPageFormInner);
+}
+// console.log(courseData["English"]);
+// const a = courseData["English"].filter((data) => data.year === "First Year");
+// console.log(a[0].credit);
+/*             */
+/* result page */
+/*             */
+
+/*             */
+/* functions   */
+/*             */
 function createOptionElements(parent, valueArr) {
   // this function creates option elements inside a parent select element
   // how many option el will be created depends on valueArr
@@ -442,20 +559,23 @@ function createOptionElements(parent, valueArr) {
   });
 }
 
-/*           */
-/* Home page */
-/*           */
-
-/*             */
-/* result page */
-/*             */
-function filterData({ name, year }) {
-  const filteredYear = courseData[name].filter((data) => data.year === year);
-  console.log(filteredYear);
+function createElement(element, className, text, valueAttribute) {
+  const htmlEl = document.createElement(element);
+  if (className) {
+    htmlEl.classList.add(className);
+  }
+  if (text) {
+    htmlEl.textContent = text;
+  }
+  if (valueAttribute) {
+    if (valueAttribute === "Select") {
+      htmlEl.disabled = true;
+      htmlEl.selected = true;
+    }
+    htmlEl.setAttribute("value", valueAttribute);
+  }
+  return htmlEl;
 }
-// console.log(courseData["English"]);
-// const a = courseData["English"].filter((data) => data.year === "First Year");
-// console.log(a);
 /*             */
-/* result page */
+/* functions   */
 /*             */
