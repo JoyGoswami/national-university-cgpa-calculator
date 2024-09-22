@@ -1,6 +1,7 @@
 const courseData = {
   English: [
     {
+      subjectName: "English",
       year: "First Year",
       subjectCode: {
         "English Reading Skills": "sub code",
@@ -30,6 +31,7 @@ const courseData = {
       },
     },
     {
+      subjectName: "English",
       year: "Second Year",
       subjectCode: {
         "Introduction to Drama": "sub code",
@@ -59,6 +61,7 @@ const courseData = {
       },
     },
     {
+      subjectName: "English",
       year: "Third Year",
 
       subjectCode: {
@@ -93,6 +96,7 @@ const courseData = {
       },
     },
     {
+      subjectName: "English",
       year: "Fourth Year",
       subjectCode: {
         "Nineteenth Century Novel": "sub code",
@@ -136,6 +140,7 @@ const courseData = {
   ],
   Bangla: [
     {
+      subjectName: "Bangla",
       year: "First Year",
       subjectCode: {
         "History and Culture of Bangladesh and Bengalees (From Ancients to 2000 AD)":
@@ -167,6 +172,7 @@ const courseData = {
       },
     },
     {
+      subjectName: "Bangla",
       year: "Second Year",
       subjectCode: {
         "History of Bengali Literature -1 (Ancients and Medieval)": "sub code",
@@ -194,10 +200,11 @@ const courseData = {
         "Bengali Drama -1": "4",
         "Sociology of Bangladesh  Or  Bangladesh Society and Culture": "4",
         "History of the Emergence of Independent Bangladesh": "4",
-        "English (Compulsory)": "Non-credit",
+        "English (Compulsory)": "0",
       },
     },
     {
+      subjectName: "Bangla",
       year: "Third Year",
       subjectCode: {
         "History of Bangla Literature-II, First part of Modern Age (1801-1947)":
@@ -235,6 +242,7 @@ const courseData = {
       },
     },
     {
+      subjectName: "Bangla",
       year: "Fourth Year",
       subjectCode: {
         "History of Bangla Literature-3 (Development of Bangladeshi Literature Since 1947 to 2000)":
@@ -278,6 +286,7 @@ const courseData = {
   ],
   Accounting: [
     {
+      subjectName: "Accounting",
       year: "First Year",
       subjectCode: {
         "Principles of Accounting": "sub code",
@@ -305,6 +314,7 @@ const courseData = {
       },
     },
     {
+      subjectName: "Accounting",
       year: "Second Year",
       subjectCode: {
         "Comuter and Information Technology (Accountinpg)": "sub code",
@@ -335,6 +345,7 @@ const courseData = {
       },
     },
     {
+      subjectName: "Accounting",
       year: "Third Year",
       subjectCode: {
         "Audit and Assurance": "sub code",
@@ -368,6 +379,7 @@ const courseData = {
       },
     },
     {
+      subjectName: "Accounting",
       year: "Fourth Year",
       subjectCode: {
         "Accounting Theory": "sub code",
@@ -413,6 +425,7 @@ const courseData = {
 const homePage = document.querySelector(".main_inner_home");
 const resultPage = document.querySelector(".main_inner_result_page");
 const cgpaResultPage = document.querySelector(".main_inner_cgpa_result_page");
+const resultPageForm = document.querySelector(".result_page_form");
 
 /*           */
 /* Home page */
@@ -476,19 +489,25 @@ function filterData({ name, year }) {
 
   // it displays the total credit
   document.querySelector(".total_credit").textContent = totalCredit;
+  document.querySelector(".year").textContent = filteredYear[0].year;
 
   displayInputFields(filteredYear);
 }
 
 function displayInputFields(filterData) {
   filterData[0].subjects.map((courseName, index) => {
-    createGradeInputBox(courseName, index, filterData[0].credit[courseName]);
+    createGradeInputBox(
+      courseName,
+      index,
+      filterData[0].credit[courseName],
+      filterData[0].subjectName,
+      filterData[0].year
+    );
   });
 }
 
-function createGradeInputBox(courseName, index, credit) {
+function createGradeInputBox(courseName, index, credit, subject, year) {
   // it creates the whole resultPageFormInner
-  const resultPageForm = document.querySelector(".result_page_form");
 
   const resultPageFormInner = createElement(
     "div",
@@ -528,7 +547,16 @@ function createGradeInputBox(courseName, index, credit) {
   const resultGradeSelect = createElement("select", "result_grade_select");
 
   grades.map((grade) => {
-    const optionEl = createElement("option", null, grade, grade);
+    const optionEl = createElement(
+      "option",
+      null,
+      grade,
+      grade,
+      courseName,
+      credit,
+      subject,
+      year
+    );
     resultGradeSelect.append(optionEl);
   });
 
@@ -538,12 +566,90 @@ function createGradeInputBox(courseName, index, credit) {
   resultPageFormInner.append(subjectName, resultInputContainer);
   resultPageForm.append(resultPageFormInner);
 }
-// console.log(courseData["English"]);
-// const a = courseData["English"].filter((data) => data.year === "First Year");
-// console.log(a[0].credit);
+
 /*             */
 /* result page */
 /*             */
+
+/*               */
+/* form onchange */
+/*               */
+
+let sgpaObj = {};
+let creditObj = {};
+
+resultPageForm.addEventListener("change", (e) => {
+  // if stores index of the changed option
+  const indexOfChangedOption = e.target.selectedIndex;
+  // e.target.options gives an array of option value
+  const selectedOption = e.target.options[indexOfChangedOption];
+
+  const dataCourseName = selectedOption.dataset.courseName;
+  const dataCredit = selectedOption.dataset.credit;
+  const dataSubject = selectedOption.dataset.subject;
+  const dataYear = selectedOption.dataset.year;
+
+  let enteredGrade = parseFloat(e.target.value.split(" ").pop());
+  let sgpa = enteredGrade * parseFloat(dataCredit);
+
+  sgpaObj[`${dataCourseName}`] = sgpa;
+
+  creditObj[`${dataCourseName}`] = parseFloat(dataCredit);
+
+  const sgpaValueArr = Object.values(sgpaObj);
+  const creditValueArr = Object.values(creditObj);
+
+  const addSgpa = sgpaValueArr.reduce((accumulator, current) => {
+    return accumulator + current;
+  });
+
+  const addCredit = creditValueArr.reduce((accumulator, current) => {
+    return accumulator + current;
+  });
+
+  let gpa = (addSgpa / addCredit).toFixed(2);
+
+  let percentage;
+  let grade;
+  if (gpa == 4.0) {
+    percentage = "80% or above";
+    grade = "A+";
+  } else if (gpa >= 3.75) {
+    percentage = "75% to less than 80%";
+    grade = "A";
+  } else if (gpa >= 3.5) {
+    percentage = "70% to less than 70%";
+    grade = "A-";
+  } else if (gpa >= 3.25) {
+    percentage = "65% to less than 70%";
+    grade = "B+";
+  } else if (gpa >= 3.0) {
+    percentage = "60% to less than 65%";
+    grade = "B";
+  } else if (gpa >= 2.75) {
+    percentage = "55% to less than 60%";
+    grade = "B-";
+  } else if (gpa >= 2.5) {
+    percentage = "50% to less than 55%";
+    grade = "C+";
+  } else if (gpa >= 2.25) {
+    percentage = "45% to less than 50%";
+    grade = "C";
+  } else if (gpa >= 2.0) {
+    percentage = "40% to less than 45%";
+    grade = "D";
+  } else if (gpa >= 0.0) {
+    percentage = "Less than 40%";
+    grade = "F";
+  }
+
+  document.querySelector(".gpa").textContent = `${grade} ${gpa}`;
+  document.querySelector(".percentage").textContent = percentage;
+});
+
+/*               */
+/* form onchange */
+/*               */
 
 /*             */
 /* functions   */
@@ -559,7 +665,16 @@ function createOptionElements(parent, valueArr) {
   });
 }
 
-function createElement(element, className, text, valueAttribute) {
+function createElement(
+  element,
+  className,
+  text,
+  valueAttribute,
+  dataAttribute,
+  dataCreditAttribute,
+  dataSubAttribute,
+  dataYearAttribute
+) {
   const htmlEl = document.createElement(element);
   if (className) {
     htmlEl.classList.add(className);
@@ -574,8 +689,52 @@ function createElement(element, className, text, valueAttribute) {
     }
     htmlEl.setAttribute("value", valueAttribute);
   }
+  if (dataAttribute) {
+    if (valueAttribute !== "Select") {
+      htmlEl.setAttribute("data-course-name", dataAttribute);
+      htmlEl.setAttribute("data-year", dataYearAttribute);
+      htmlEl.setAttribute("data-subject", dataSubAttribute);
+      htmlEl.setAttribute("data-credit", dataCreditAttribute);
+    }
+  }
   return htmlEl;
 }
 /*             */
 /* functions   */
 /*             */
+// let gpa = 2.49;
+// let percentage;
+// let grade;
+// if (gpa === 4.0) {
+//   percentage = "80% or above";
+//   grade = "A+";
+// } else if (gpa >= 3.75) {
+//   percentage = "75% to less than 80%";
+//   grade = "A";
+// } else if (gpa >= 3.5) {
+//   percentage = "70% to less than 70%";
+//   grade = "A-";
+// } else if (gpa >= 3.25) {
+//   percentage = "65% to less than 70%";
+//   grade = "B+";
+// } else if (gpa >= 3.0) {
+//   percentage = "60% to less than 65%";
+//   grade = "B";
+// } else if (gpa >= 2.75) {
+//   percentage = "55% to less than 60%";
+//   grade = "B-";
+// } else if (gpa >= 2.5) {
+//   percentage = "50% to less than 55%";
+//   grade = "C+";
+// } else if (gpa >= 2.25) {
+//   percentage = "45% to less than 50%";
+//   grade = "C";
+// } else if (gpa >= 2.0) {
+//   percentage = "40% to less than 45%";
+//   grade = "D";
+// } else if (gpa >= 0.0) {
+//   percentage = "Less than 40%";
+//   grade = "F";
+// }
+// console.log(grade);
+// console.log(percentage);
