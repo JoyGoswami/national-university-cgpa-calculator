@@ -142,11 +142,13 @@ body {
   width: 150px;
   height: 24px;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
   border-radius: 4px;
   margin-top: 8px;
   font-weight: 300;
+  padding-inline: 8px;
+  gap: 10px;
 }
 .result_form_field select {
   width: 72px;
@@ -154,6 +156,10 @@ body {
   background-color: inherit;
   border: none;
   outline: none;
+}
+
+.all_year_cgpa_btn_container {
+  margin: 2rem 0;
 }
 
 .btn {
@@ -224,3 +230,20 @@ body {
 /*        */
 /* Footer */
 /*        */
+
+@media (min-width: 361px) {
+  .container {
+    width: 100%;
+  }
+  .result_form_field {
+    width: 49%;
+    /* justify-content: flex-start; */
+    /* padding-inline: 8px;
+    gap: 10px; */
+  }
+}
+@media (min-width: 700px) {
+  .container {
+    width: 700px;
+  }
+}
