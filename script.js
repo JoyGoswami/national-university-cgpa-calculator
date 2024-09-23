@@ -426,7 +426,7 @@ const homePage = document.querySelector(".main_inner_home");
 const resultPage = document.querySelector(".main_inner_result_page");
 const cgpaResultPage = document.querySelector(".main_inner_cgpa_result_page");
 const resultPageForm = document.querySelector(".result_page_form");
-
+const allYearBtn = document.querySelector(".all_year_btn");
 /*           */
 /* Home page */
 /*           */
@@ -571,6 +571,48 @@ function createGradeInputBox(courseName, index, credit, subject, year) {
 /* result page */
 /*             */
 
+/*                    */
+/* All Year CGPA page */
+/*                    */
+const resultPageFormCgpa = document.querySelector(".result_page_form_cgpa");
+
+allYearBtn.addEventListener("click", (e) => {
+  resultPage.style.display = "none";
+  cgpaResultPage.style.display = "block";
+});
+
+let allYearGpaObj = {};
+resultPageFormCgpa.addEventListener("change", (e) => {
+  // if stores index of the changed option
+  const indexOfChangedOption = e.target.selectedIndex;
+  // e.target.options gives an array of option value
+  const selectedOption = e.target.options[indexOfChangedOption];
+  const year = selectedOption.dataset.year;
+
+  const allYearGpaGrade = e.target.value;
+  console.log(allYearGpaGrade);
+  let allYearGradeNum = parseFloat(allYearGpaGrade.split(" ").pop());
+
+  allYearGpaObj[`${year}`] = allYearGradeNum;
+
+  let allYearGpaValue = Object.values(allYearGpaObj);
+
+  let addAllYearGpa = allYearGpaValue.reduce((accumulator, current) => {
+    return accumulator + current;
+  });
+
+  let cgpa = addAllYearGpa / allYearGpaValue.length;
+
+  const cgpaEl = document.querySelector(".cgpa");
+  const cgpaPercentageEl = document.querySelector(".cgpa_percentage");
+
+  calcGpaPercentage(cgpa.toFixed(2), cgpaEl, cgpaPercentageEl);
+});
+
+/*                    */
+/* All Year CGPA page */
+/*                    */
+
 /*               */
 /* form onchange */
 /*               */
@@ -609,42 +651,46 @@ resultPageForm.addEventListener("change", (e) => {
 
   let gpa = (addSgpa / addCredit).toFixed(2);
 
-  let percentage;
-  let grade;
-  if (gpa == 4.0) {
-    percentage = "80% or above";
-    grade = "A+";
-  } else if (gpa >= 3.75) {
-    percentage = "75% to less than 80%";
-    grade = "A";
-  } else if (gpa >= 3.5) {
-    percentage = "70% to less than 70%";
-    grade = "A-";
-  } else if (gpa >= 3.25) {
-    percentage = "65% to less than 70%";
-    grade = "B+";
-  } else if (gpa >= 3.0) {
-    percentage = "60% to less than 65%";
-    grade = "B";
-  } else if (gpa >= 2.75) {
-    percentage = "55% to less than 60%";
-    grade = "B-";
-  } else if (gpa >= 2.5) {
-    percentage = "50% to less than 55%";
-    grade = "C+";
-  } else if (gpa >= 2.25) {
-    percentage = "45% to less than 50%";
-    grade = "C";
-  } else if (gpa >= 2.0) {
-    percentage = "40% to less than 45%";
-    grade = "D";
-  } else if (gpa >= 0.0) {
-    percentage = "Less than 40%";
-    grade = "F";
-  }
+  // let percentage;
+  // let grade;
+  // if (gpa == 4.0) {
+  //   percentage = "80% or above";
+  //   grade = "A+";
+  // } else if (gpa >= 3.75) {
+  //   percentage = "75% to less than 80%";
+  //   grade = "A";
+  // } else if (gpa >= 3.5) {
+  //   percentage = "70% to less than 70%";
+  //   grade = "A-";
+  // } else if (gpa >= 3.25) {
+  //   percentage = "65% to less than 70%";
+  //   grade = "B+";
+  // } else if (gpa >= 3.0) {
+  //   percentage = "60% to less than 65%";
+  //   grade = "B";
+  // } else if (gpa >= 2.75) {
+  //   percentage = "55% to less than 60%";
+  //   grade = "B-";
+  // } else if (gpa >= 2.5) {
+  //   percentage = "50% to less than 55%";
+  //   grade = "C+";
+  // } else if (gpa >= 2.25) {
+  //   percentage = "45% to less than 50%";
+  //   grade = "C";
+  // } else if (gpa >= 2.0) {
+  //   percentage = "40% to less than 45%";
+  //   grade = "D";
+  // } else if (gpa >= 0.0) {
+  //   percentage = "Less than 40%";
+  //   grade = "F";
+  // }
 
-  document.querySelector(".gpa").textContent = `${grade} ${gpa}`;
-  document.querySelector(".percentage").textContent = percentage;
+  // document.querySelector(".gpa").textContent = `${grade} ${gpa}`;
+  // document.querySelector(".percentage").textContent = percentage;
+
+  const gpaEl = document.querySelector(".gpa");
+  const percentageEl = document.querySelector(".percentage");
+  calcGpaPercentage(gpa, gpaEl, percentageEl);
 });
 
 /*               */
@@ -699,42 +745,44 @@ function createElement(
   }
   return htmlEl;
 }
+
+function calcGpaPercentage(gpa, gpaEl, percentageEl) {
+  let percentage;
+  let grade;
+  if (gpa == 4.0) {
+    percentage = "80% or above";
+    grade = "A+";
+  } else if (gpa >= 3.75) {
+    percentage = "75% to less than 80%";
+    grade = "A";
+  } else if (gpa >= 3.5) {
+    percentage = "70% to less than 70%";
+    grade = "A-";
+  } else if (gpa >= 3.25) {
+    percentage = "65% to less than 70%";
+    grade = "B+";
+  } else if (gpa >= 3.0) {
+    percentage = "60% to less than 65%";
+    grade = "B";
+  } else if (gpa >= 2.75) {
+    percentage = "55% to less than 60%";
+    grade = "B-";
+  } else if (gpa >= 2.5) {
+    percentage = "50% to less than 55%";
+    grade = "C+";
+  } else if (gpa >= 2.25) {
+    percentage = "45% to less than 50%";
+    grade = "C";
+  } else if (gpa >= 2.0) {
+    percentage = "40% to less than 45%";
+    grade = "D";
+  } else if (gpa >= 0.0) {
+    percentage = "Less than 40%";
+    grade = "F";
+  }
+  gpaEl.textContent = `${grade} ${gpa}`;
+  percentageEl.textContent = percentage;
+}
 /*             */
 /* functions   */
 /*             */
-// let gpa = 2.49;
-// let percentage;
-// let grade;
-// if (gpa === 4.0) {
-//   percentage = "80% or above";
-//   grade = "A+";
-// } else if (gpa >= 3.75) {
-//   percentage = "75% to less than 80%";
-//   grade = "A";
-// } else if (gpa >= 3.5) {
-//   percentage = "70% to less than 70%";
-//   grade = "A-";
-// } else if (gpa >= 3.25) {
-//   percentage = "65% to less than 70%";
-//   grade = "B+";
-// } else if (gpa >= 3.0) {
-//   percentage = "60% to less than 65%";
-//   grade = "B";
-// } else if (gpa >= 2.75) {
-//   percentage = "55% to less than 60%";
-//   grade = "B-";
-// } else if (gpa >= 2.5) {
-//   percentage = "50% to less than 55%";
-//   grade = "C+";
-// } else if (gpa >= 2.25) {
-//   percentage = "45% to less than 50%";
-//   grade = "C";
-// } else if (gpa >= 2.0) {
-//   percentage = "40% to less than 45%";
-//   grade = "D";
-// } else if (gpa >= 0.0) {
-//   percentage = "Less than 40%";
-//   grade = "F";
-// }
-// console.log(grade);
-// console.log(percentage);
