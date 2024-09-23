@@ -74,7 +74,7 @@ body {
   flex-direction: column;
   gap: 8px;
   width: 100%;
-  margin-top: 24px;
+  margin-top: 8px;
 }
 
 .input_field {
@@ -90,8 +90,27 @@ body {
   font-weight: 300;
 }
 
+input[type="submit"]:hover {
+  background-color: #d1d1d1;
+  transition: all 0.3s ease-in-out;
+}
+
 .input_field option {
   color: black;
+}
+
+.or {
+  font-size: 10px;
+  font-weight: 300;
+  margin-top: 8px;
+}
+
+.all_year_cgpa_btn_container_home {
+  width: 100%;
+}
+.btn:hover {
+  background-color: #b3b3b3;
+  transition: all 0.3s ease-in-out;
 }
 
 /*             */
@@ -172,6 +191,7 @@ body {
   background-color: var(--grade-input-color);
   margin-top: 8px;
   font-weight: 300;
+  position: relative;
 }
 .result_box p {
   font-weight: 300;

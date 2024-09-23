@@ -427,6 +427,7 @@ const resultPage = document.querySelector(".main_inner_result_page");
 const cgpaResultPage = document.querySelector(".main_inner_cgpa_result_page");
 const resultPageForm = document.querySelector(".result_page_form");
 const allYearBtn = document.querySelector(".all_year_btn");
+const allYearBtnResult = document.querySelector(".all_year_btn_result");
 /*           */
 /* Home page */
 /*           */
@@ -434,6 +435,13 @@ const allYearBtn = document.querySelector(".all_year_btn");
 const selectSubject = document.getElementById("select_sub");
 const selectYear = document.getElementById("select_year");
 const subjectYearInputForm = document.querySelector(".input_year_sub_form");
+
+const logo = document.querySelector(".logo_container");
+
+// logo click to reload page
+logo.addEventListener("click", () => {
+  location.reload();
+});
 
 // const homePageInputObj = {};
 // subjects stores an array of key (subject name) from courseData object
@@ -577,7 +585,13 @@ function createGradeInputBox(courseName, index, credit, subject, year) {
 const resultPageFormCgpa = document.querySelector(".result_page_form_cgpa");
 
 allYearBtn.addEventListener("click", (e) => {
+  homePage.style.display = "none";
+  cgpaResultPage.style.display = "block";
+});
+
+allYearBtnResult.addEventListener("click", (e) => {
   resultPage.style.display = "none";
+
   cgpaResultPage.style.display = "block";
 });
 

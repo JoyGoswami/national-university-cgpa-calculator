@@ -1417,18 +1417,32 @@
           </g>
         </svg>
         <form class="input_year_sub_form">
-          <select class="input_field" name="select_sub" id="select_sub">
+          <select
+            class="input_field"
+            name="select_sub"
+            id="select_sub"
+            required
+          >
             <option selected disabled>Select Your Subject</option>
           </select>
-          <select class="input_field" name="select_year" id="select_year">
-            <option disabled>Select Your Year</option>
-            <option selected value="First Year">First Year</option>
+          <select
+            class="input_field"
+            name="select_year"
+            id="select_year"
+            required
+          >
+            <option selected disabled>Select Your Year</option>
+            <option value="First Year">First Year</option>
             <option value="Second Year">Second Year</option>
             <option value="Third Year">Third Year</option>
             <option value="Fourth Year">Fourth Year</option>
           </select>
           <input class="input_field" type="submit" value="Submit" />
         </form>
+        <p class="or">OR</p>
+        <div class="all_year_cgpa_btn_container_home">
+          <button class="btn all_year_btn">Calculate All Year CGPA</button>
+        </div>
       </div>
       <div class="main_inner_result_page">
         <div class="result_container">
@@ -1450,7 +1464,9 @@
         </div>
         <form class="result_page_form"></form>
         <div class="all_year_cgpa_btn_container">
-          <button class="btn all_year_btn">Calculate All Year CGPA</button>
+          <button class="btn all_year_btn_result">
+            Calculate All Year CGPA
+          </button>
         </div>
       </div>
       <div class="main_inner_cgpa_result_page">
@@ -1458,11 +1474,11 @@
           <div class="cgpa_result">
             <div class="result_box">
               <p><strong>GPA</strong></p>
-              <p class="cgpa"><strong>4</strong></p>
+              <p class="cgpa"><strong>0</strong></p>
             </div>
             <div class="result_box">
               <p>Percentage</p>
-              <p class="cgpa_percentage">100%</p>
+              <p class="cgpa_percentage">0%</p>
             </div>
           </div>
         </div>
