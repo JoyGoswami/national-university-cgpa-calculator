@@ -1,6 +1,6 @@
 # National University CGPA Calculator
 
-- [Visit Site](https://joygoswami.github.io/national-university-cgpa-calculator/)
+- [Visit the App](https://joygoswami.github.io/national-university-cgpa-calculator/)
 
 ## Description
 
